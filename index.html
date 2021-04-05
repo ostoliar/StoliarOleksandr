@@ -21,10 +21,10 @@
        
 
     </div>
-    <form class="check-form" name="myForm">
-        <input class="validation" type="email" name="fname" placeholder="E-mail" id="eMail"  required>
-        <input class="validation" type="text" name="fname" placeholder="Имя" id="name" required >
-        <button id="send" class="btn-check ">Отправить</button>
+    <form class="check-form" name="myForm"  onsubmit = "return validateForm()">
+        <input  type="email" name="fname" placeholder="E-mail" id="eMail"  >
+        <input  type="text" name="fname" placeholder="Имя" id="name"  >
+        <button type="submit" id="send" class="btn-check ">Отправить</button>
     </form> 
 
 

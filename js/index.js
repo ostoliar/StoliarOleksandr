@@ -46,6 +46,8 @@ function getProductPrice(element) {
 }
 
 function quantityChanged(event) {
+  
+
   let input = event.target;
   if (isNaN(input.value) || input.value <= 0) input.value = 1;
 }
@@ -132,27 +134,31 @@ function getSelectedPrice() {
 
 // check
 (function openCheckForm() {
+
   const checkBtn = document.getElementsByClassName("btn-check")[0];
   const cart = document.getElementsByClassName("check-form")[0];
   checkBtn.addEventListener("click", function () {
     cart.classList.toggle("show-form");
   });
 })();
-
-(function send() {
+function validateForm() {
   const sendBtn = document.getElementById("send");
-  let valid = document.forms["myForm"]["fname"].value;
-  console.log(valid)
+  const mail = document.getElementById('eMail').value;
+  const name = document.getElementById('name').value;
 
-  sendBtn.addEventListener("click", function () {
-debugger
-    if (valid == "" || " ") {
-      alert("Name must be filled out");
+    if (mail.trim()==null || mail.trim()==""|| mail===" ") {
+      alert("Form must be filled out");
       return false;
+    } if 
+      (name.trim()==null || name.trim()==""|| name===" ") {
+        alert("Form must be filled out");
+        return false;
     } else {
-        alert('Thanks')
+        alert('Thank you for your order!')
+        
       document.getElementsByClassName("red-info")[0].innerText = '';
       document.getElementsByClassName("red-info")[1].innerText = '';
+      return true
     }
-  });
-})();
+  
+};

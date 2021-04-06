@@ -208,20 +208,25 @@ h1, h2, h3 {
 
 /* check-form */
 .check-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 2rem;
     width: 0;
-    height: 10rem;
+    height: 0;
     background-color: lightgray;
     border-radius: 1rem;
     margin: auto;
     overflow: hidden;
     margin-top: 3rem;
-    transition: all 0.2s ease-in-out;
+    border: 1px dotted #ff3adc;
+
 }
 .show-form {
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
     width: 20rem;
+    height: 10rem;
+
 }

@@ -2,13 +2,8 @@ let addCartItems = document.getElementsByClassName("product-box__btn");
 
 for (let i = 0; i < addCartItems.length; i++) {
   let button = addCartItems[i];
-  button.addEventListener("click", function (event) {
-    console.log(event.target);
-
-    updateCartTotall();
-  });
+  button.addEventListener("click", updateCartTotall) 
 }
-
 function updateCartTotall() {
   const cartItemContainer = document.getElementsByClassName("products-box")[0];
   let cartRows = cartItemContainer.getElementsByClassName("product-box__item");
@@ -37,7 +32,7 @@ function updateCartTotall() {
 
   document.getElementsByClassName("red-info")[0].innerText = totalQuantity;
   document.getElementsByClassName("red-info")[1].innerText = totalPrice;
-  quantityChanged();
+  quantityChanged(); 
 }
 
 function getProductPrice(element) {
@@ -46,8 +41,6 @@ function getProductPrice(element) {
 }
 
 function quantityChanged(event) {
-  
-
   let input = event.target;
   if (isNaN(input.value) || input.value <= 0) input.value = 1;
 }
@@ -134,7 +127,6 @@ function getSelectedPrice() {
 
 // check
 (function openCheckForm() {
-
   const checkBtn = document.getElementsByClassName("btn-check")[0];
   const cart = document.getElementsByClassName("check-form")[0];
   checkBtn.addEventListener("click", function () {
@@ -142,20 +134,16 @@ function getSelectedPrice() {
   });
 })();
 function validateForm() {
-  const sendBtn = document.getElementById("send");
   const mail = document.getElementById('eMail').value;
   const name = document.getElementById('name').value;
-
     if (mail.trim()==null || mail.trim()==""|| mail===" ") {
       alert("Form must be filled out");
       return false;
-    } if 
-      (name.trim()==null || name.trim()==""|| name===" ") {
+    } if (name.trim()==null || name.trim()==""|| name===" ") {
         alert("Form must be filled out");
         return false;
     } else {
         alert('Thank you for your order!')
-        
       document.getElementsByClassName("red-info")[0].innerText = '';
       document.getElementsByClassName("red-info")[1].innerText = '';
       return true
